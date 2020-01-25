@@ -36,5 +36,9 @@ function createCarousel() {
   img3.src = "./assets/carousel/trees.jpeg";
   img4.src = "./assets/carousel/turntable.jpeg";
 
+  carousel.append(leftBtn, img1, img2, img3, img4, rightBtn);
+
   return carousel;
 }
+
+console.log(createCarousel())
