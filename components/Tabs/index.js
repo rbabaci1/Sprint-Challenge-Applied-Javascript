@@ -14,13 +14,22 @@ function getTopics(url) {
             .catch(error => console.error(error));
 }
 
+const topicsDiv = document.querySelector('.topics');
+
+getTopics('https://lambda-times-backend.herokuapp.com/topics')
+    .then(topics => {
+        topics.forEach(topic => {
+            topicsDiv.append( createTab(topic));
+        });
+    })
+    .catch(error => console.error(error));
 
 
 function createTab(topic) {
     let tab = document.createElement('div');
     tab.classList.add('tab');
 
-    tab.textContent = topics;
+    tab.textContent = topic;
 
-    
+    return tab;
 }
