@@ -27,6 +27,9 @@ function createCarousel() {
   let img4 = document.createElement('img');
   let rightBtn = document.createElement('div');
 
+  carousel.classList.add('carousel');
+  leftBtn.classList.add('left-button');
+  rightBtn.classList.add('right-button');
 
   return carousel;
 }
