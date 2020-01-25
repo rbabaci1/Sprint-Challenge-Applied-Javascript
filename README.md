@@ -29,14 +29,22 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager
 
 1. What is the DOM?
+- It stands for Document Object Model, which represents a neutral API to communicate between JavasCript and the browser.
+It is a tree structure like and consists fo nodes with different types. 
 
 2. What is an event?
+- An event is things that happen on the page with a user interaction or something the browser does.
 
 3. What is an event listener?
+- It is some sort of procedure as an object that waits for an event to happen so it can handle it.
 
 4. Why would we convert a NodeList into an Array?
+- A NodeList it's not an array, it is an array like object, which mean that it's formatted key value pair.
+We convert it into an array so we can have access to all the array methods out there to manipulate the data however we want.
 
 5. What is a component?
+- It is a small, reusable container that can be created using a function like (buttons, cards, headers...)
+It's very powerful for it's reusability and making our code DRY and easy to read.
 
 ### Git Set up
 
