@@ -23,5 +23,11 @@ function Header() {
     heading.textContent = 'Lambda Times';
     span2.textContent = '98°';
 
-    heading.append(span1, heading, span2);
+    header.append(span1, heading, span2);
+
+    return header;
 }
+
+const headerContainer = document.querySelector('.header-container');
+
+headerContainer.append( Header());
