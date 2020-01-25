@@ -34,5 +34,12 @@ function createCard(articleObj) {
     let imgContainer = document.createElement('div');
     let authorImg = document.createElement('img');
     let authorName = document.createElement('span');
+
+    card.classList.add('card');
+    headline.classList.add('headline');
+    author.classList.add('author');
+    imgContainer.classList.add('img-container');
     
+
+    return card;
 }
