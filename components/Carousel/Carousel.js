@@ -55,6 +55,8 @@ let currentIndex = 0;
 function nextImage() {
   if (currentIndex < images.length - 1) {
     currentIndex++;
+  } else {
+    currentIndex = 0;
   }
   image.src = images[currentIndex];
 }
@@ -67,6 +69,8 @@ rightButton.addEventListener('click', (e) => {
 function prevImage() {
   if (currentIndex > 0) {
     currentIndex--;
+  } else {
+    currentIndex = images.length - 1;
   }
   image.src = images[currentIndex];
 }
