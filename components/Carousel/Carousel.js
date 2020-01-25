@@ -30,6 +30,8 @@ function createCarousel() {
   image.classList.add('current-img');
 
   image.src = "./assets/carousel/mountains.jpeg";
+  leftBtn.textContent = '<-';
+  rightBtn.textContent = '->';
 
   carousel.append(leftBtn, image, rightBtn);
 
@@ -42,6 +44,7 @@ carouselContainer.append(createCarousel());
 const leftButton = document.querySelector('.left-button');
 const rightButton = document.querySelector('.right-button');
 let image = document.querySelector('.current-img');
+
 // images src array
 const images = [
   "./assets/carousel/mountains.jpeg",
