@@ -13,3 +13,12 @@ function getTopics(url) {
             .then(response => response.data.topics)
             .catch(error => console.error(error));
 }
+
+
+
+function createTab(topic) {
+    let tab = document.createElement('div');
+    tab.classList.add('tab');
+
+    
+}
