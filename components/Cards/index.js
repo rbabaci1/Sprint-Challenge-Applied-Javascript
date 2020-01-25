@@ -26,7 +26,15 @@ function getArticles(url) {
 
 getArticles('https://lambda-times-backend.herokuapp.com/articles')
     .then(r => console.log(r))
-
+// <div class="card">
+//   <div class="headline">{Headline of article}</div>
+//   <div class="author">
+//     <div class="img-container">
+//       <img src={url of authors image} />
+//     </div>
+//     <span>By {authors name}</span>
+//   </div>
+// </div>
 function createCard(articleObj) {
     let card = document.createElement('div');
     let headline = document.createElement('div');
@@ -39,7 +47,10 @@ function createCard(articleObj) {
     headline.classList.add('headline');
     author.classList.add('author');
     imgContainer.classList.add('img-container');
-    
+
+    headline.textContent = articleObj.headline;
+    authorImg.src = articleObj.authorPhoto;
+    authorName.textContent = articleObj.authorName;
 
     return card;
 }
