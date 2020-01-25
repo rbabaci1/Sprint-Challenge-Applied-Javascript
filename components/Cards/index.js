@@ -20,21 +20,21 @@
 
 function getArticles(url) {
     return axios.get(url)
-            .then(response => response.data.articles)
+            .then(response => Object.values(response.data.articles).flat() )
             .catch(error => console.error(error));
 }
 
+const cardsContainer = document.querySelector('.cards-container');
+
 getArticles('https://lambda-times-backend.herokuapp.com/articles')
-    .then(r => console.log(r))
-// <div class="card">
-//   <div class="headline">{Headline of article}</div>
-//   <div class="author">
-//     <div class="img-container">
-//       <img src={url of authors image} />
-//     </div>
-//     <span>By {authors name}</span>
-//   </div>
-// </div>
+    .then(articles => {
+        articles.forEach(article => {
+            cardsContainer.append(createCard(article) );
+        })
+    })
+    .catch(error => console.error(error));
+
+
 function createCard(articleObj) {
     let card = document.createElement('div');
     let headline = document.createElement('div');
@@ -51,6 +51,10 @@ function createCard(articleObj) {
     headline.textContent = articleObj.headline;
     authorImg.src = articleObj.authorPhoto;
     authorName.textContent = articleObj.authorName;
+
+    imgContainer.append(authorImg);
+    author.append(imgContainer, authorName);
+    card.append(headline, author);
 
     return card;
 }
