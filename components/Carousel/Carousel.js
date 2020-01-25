@@ -17,12 +17,6 @@
     <div class="right-button"> > </div>
   </div>
 */
-const images = [
-  "./assets/carousel/mountains.jpeg",
-  "./assets/carousel/computer.jpeg",
-  "./assets/carousel/trees.jpeg",
-  "./assets/carousel/turntable.jpeg"
-]
 
 function createCarousel() {
   let carousel = document.createElement('div');
@@ -34,8 +28,8 @@ function createCarousel() {
   leftBtn.classList.add('left-button');
   rightBtn.classList.add('right-button');
   image.classList.add('current-img');
-  
-  image.src = images[0];
+
+  image.src = "./assets/carousel/mountains.jpeg";
 
   carousel.append(leftBtn, image, rightBtn);
 
@@ -48,23 +42,36 @@ carouselContainer.append(createCarousel());
 const leftButton = document.querySelector('.left-button');
 const rightButton = document.querySelector('.right-button');
 let image = document.querySelector('.current-img');
+// images src array
+const images = [
+  "./assets/carousel/mountains.jpeg",
+  "./assets/carousel/computer.jpeg",
+  "./assets/carousel/trees.jpeg",
+  "./assets/carousel/turntable.jpeg"
+];
 
 let currentIndex = 0;
 
-rightButton.addEventListener('click', (event) => {
+function nextImage() {
   if (currentIndex < images.length - 1) {
     currentIndex++;
-    image.src = images[currentIndex];
   }
+  image.src = images[currentIndex];
+}
 
-  event.stopPropagation();
+rightButton.addEventListener('click', (e) => {
+  nextImage();
+  e.stopPropagation();
 });
 
-leftButton.addEventListener('click', (event) => {
+function prevImage() {
   if (currentIndex > 0) {
     currentIndex--;
-    image.src = images[currentIndex];
   }
+  image.src = images[currentIndex];
+}
 
-  event.stopPropagation();
-});
+leftButton.addEventListener('click', (e) => {
+  prevImage();
+  e.stopPropagation();
+})
