@@ -24,7 +24,15 @@ function getArticles(url) {
             .catch(error => console.error(error));
 }
 
+getArticles('https://lambda-times-backend.herokuapp.com/articles')
+    .then(r => console.log(r))
 
-function createCard() {
+function createCard(articleObj) {
+    let card = document.createElement('div');
+    let headline = document.createElement('div');
+    let author = document.createElement('div');
+    let imgContainer = document.createElement('div');
+    let authorImg = document.createElement('img');
+    let authorName = document.createElement('span');
     
 }
