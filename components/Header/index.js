@@ -3,7 +3,7 @@
 // Using a function create the component you see below:
 //
 //  <div class="header">
-//    <span class="date">SMARCH 28, 2019</span>
+//    <span class="date">MARCH 28, 2019</span>
 //    <h1>Lambda Times</h1>
 //    <span class="temp">98°</span>
 //  </div >
@@ -18,5 +18,10 @@ function Header() {
     header.classList.add('header');
     span1.classList.add('date');
     span2.classList.add('temp');
+
+    span1.textContent = 'MARCH 28, 2019';
+    heading.textContent = 'Lambda Times';
+    span2.textContent = '98°';
+
     
 }
