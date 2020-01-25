@@ -33,6 +33,7 @@ function createCarousel() {
   carousel.classList.add('carousel');
   leftBtn.classList.add('left-button');
   rightBtn.classList.add('right-button');
+  image.classList.add('current-img');
   
   image.src = images[0];
 
@@ -43,3 +44,27 @@ function createCarousel() {
 
 const carouselContainer = document.querySelector('.carousel-container');
 carouselContainer.append(createCarousel());
+
+const leftButton = document.querySelector('.left-button');
+const rightButton = document.querySelector('.right-button');
+let image = document.querySelector('.current-img');
+
+let currentIndex = 0;
+
+rightButton.addEventListener('click', (event) => {
+  if (currentIndex < images.length - 1) {
+    currentIndex++;
+    image.src = images[currentIndex];
+  }
+
+  event.stopPropagation();
+});
+
+leftButton.addEventListener('click', (event) => {
+  if (currentIndex > 0) {
+    currentIndex--;
+    image.src = images[currentIndex];
+  }
+
+  event.stopPropagation();
+});
