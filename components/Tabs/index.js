@@ -20,5 +20,7 @@ function createTab(topic) {
     let tab = document.createElement('div');
     tab.classList.add('tab');
 
+    tab.textContent = topics;
+
     
 }
