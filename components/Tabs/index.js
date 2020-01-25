@@ -7,3 +7,9 @@
 //
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
+
+function getTopics(url) {
+    return axios.get(url)
+            .then(response => response.data.topics)
+            .catch(error => console.error(error));
+}
