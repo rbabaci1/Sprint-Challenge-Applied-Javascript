@@ -81,4 +81,4 @@ function prevImage() {
 leftButton.addEventListener('click', (e) => {
   prevImage();
   e.stopPropagation();
-})
+});
